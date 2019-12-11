@@ -1,5 +1,6 @@
 ﻿Imports Common.IPC
 Imports System.ServiceModel
+Imports System.Threading.Tasks
 
 Namespace Forms.Model
 
@@ -20,8 +21,8 @@ Namespace Forms.Model
         End Sub
 
         ''' <summary>プロセス間通信実行</summary>
-        Public Function ExecuteServerSide() As Integer
-            Return _Server.Execute(5)
+        Public Async Function ExecuteServerSideAsync() As Task(Of Integer)
+            Return Await _Server.ExecuteAsync(5)
         End Function
 
     End Class
