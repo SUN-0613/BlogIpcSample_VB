@@ -6,6 +6,10 @@
 
         MyBase.OnStartup(e)
 
+        Dim form As New Forms.View.ServerView()
+
+        form.ShowDialog()
+
     End Sub
 
 End Class

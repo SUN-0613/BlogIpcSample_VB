@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
@@ -93,6 +94,11 @@
     <Import Include="System.Windows.Navigation" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Model\ServerModel.vb" />
+    <Compile Include="Forms\ViewModel\ServerViewModel.vb" />
+    <Compile Include="Forms\View\ServerView.xaml.vb">
+      <DependentUpon>ServerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -123,10 +129,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Forms\Model\" />
-    <Folder Include="Forms\ViewModel\" />
-    <Folder Include="Forms\View\" />
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Project>{eb440875-c779-4cd7-8906-4b534cd5b14b}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Forms\View\ServerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
